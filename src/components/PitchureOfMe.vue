@@ -1,11 +1,13 @@
+<script setup>
+</script>
 <template>
     <div class="Container">
-        <h1 ><span>Firstly</span><br>I call this dude <span>Tanel</span></h1>
+        <h1><span class="y">Firstly.</span><br>I call <span class="y" id="d1">this</span> dude <span class="y">Tanel</span></h1>
         <div id="d2" class="img">
 
         </div>
         
-        <div id="d1" class="wave-container">
+        <div class="wave-container">
             <slot/>
         </div>
     </div>
@@ -26,7 +28,7 @@
         padding-bottom: 15rem;
         background-color: var(--main-color);
     }
-    .Container span{
+    .Container span.y{
         color:#ffc401;
     }
     h1{
@@ -53,3 +55,88 @@
       bottom: -1.5rem;
     }
 </style>
+
+<script>
+    export default {
+      name: "pitchure-of-me",
+      mounted() {
+        var func = this.drawLine
+        func()
+        var width_before = window.innerWidth;
+        window.addEventListener('resize', function(){
+            console.log(Math.abs(width_before - window.innerWidth))
+            if (Math.abs(width_before - window.innerWidth) > 50){
+               func()
+               width_before = window.innerWidth
+            }
+
+        });
+      },
+      methods:{
+        drawLine(){
+            //To see if dom element is visible
+            //https://stackoverflow.com/questions/1462138/event-listener-for-when-element-becomes-visible
+            function onVisible(element, callback) {
+                new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                    if(entry.intersectionRatio > 0) {
+                        callback(element);
+                        observer.disconnect();
+                    }
+                    });
+                }).observe(element);
+            }
+            
+            onVisible(document.querySelector("#d1"), () => {
+                //Draw line between two dom elements
+                //https://github.com/anseki/leader-line
+
+                function removeElementsByClass(className){
+                    const elements = document.getElementsByClassName(className);
+                    while(elements.length > 0){
+                        elements[0].parentNode.removeChild(elements[0]);
+                    }
+                }
+                removeElementsByClass("leader-line")
+                
+                var line1 = new LeaderLine(
+                        document.getElementById('d1'),
+                        LeaderLine.pointAnchor({element: document.getElementById('d2'), x: 250, y: 150}),
+                        {color: '#ffc401', size: 8},
+                        {dash: {animation: true}}
+                    )
+                var line2 = new LeaderLine(
+                    document.getElementById('d1'),
+                    document.getElementById('d2'),
+                    {color: '#ffc401', size: 8},
+                    {dash: {animation: true}}
+                )
+                var smallerScreenWidth = window.matchMedia("(max-width: 1160px)");
+                var biggerScreenWidth = window.matchMedia("(min-width: 1160px)");
+                if (smallerScreenWidth.matches) {
+                    line2.remove()
+                    line1.setOptions({
+                        startSocketGravity: [300, 10],
+                        endSocketGravity: [250, -10],
+                        startSocket: 'right', 
+                        endSocket: 'bottom'
+                    });
+                    line1.show()
+                    console.log("smaller screen")
+                }
+                if (biggerScreenWidth.matches) {
+                    line1.remove()
+                    line2.setOptions({
+                        startSocketGravity: [-100, 272],
+                        endSocketGravity: [-192, 152]
+                    });
+                    line2.show()
+                    console.log("bigger screen")
+                }
+                
+                console.log("line is visible")
+            });    
+        },
+      }
+    }
+    </script>
