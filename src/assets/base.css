@@ -2,6 +2,11 @@
 
 :root {
     --main-color: #605cf4;
+    --text-color: #A1A1A1;
+    --text-fade-in-margin: 5rem;
+    --text-fade-in-cubic: cubic-bezier(0, 0.4, 0, 0.95);
+    --text-fade-in-speed: 1s;
+    --image-border-radius: 2rem;
 }
 
 

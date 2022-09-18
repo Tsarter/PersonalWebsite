@@ -91,12 +91,11 @@ export default {
   color:#cb9d0c;
   background-color: rgba(0, 0, 0, 0.363); 
   backdrop-filter: blur(3px);
-  animation-timing-function: ease-out;
-  -webkit-animation: fadeinText1 1s linear 1.5s; 
-       -moz-animation: fadeinText1 1s linear 1.5s;  
-        -ms-animation: fadeinText1 1s linear 1.5s; 
-         -o-animation: fadeinText1 1s linear 1.5s;
-            animation: fadeinText1 1s linear 1.5s;
+  -webkit-animation: fadeinText1 var(--text-fade-in-speed) var(--text-fade-in-cubic) 1s; 
+       -moz-animation: fadeinText1 var(--text-fade-in-speed) var(--text-fade-in-cubic) 1s;  
+        -ms-animation: fadeinText1 var(--text-fade-in-speed) var(--text-fade-in-cubic) 1s; 
+         -o-animation: fadeinText1 var(--text-fade-in-speed) var(--text-fade-in-cubic) 1s;
+            animation: fadeinText1 var(--text-fade-in-speed) var(--text-fade-in-cubic) 1s;
   animation-fill-mode: backwards;
 }
 .line-2{
@@ -105,12 +104,11 @@ export default {
   background-color: rgba(0, 0, 0, 0.363); 
   backdrop-filter: blur(3px);
   width: fit-content;
-  animation-timing-function: ease-out;
-  -webkit-animation: fadeinText1 1s linear 2.5s; 
-       -moz-animation: fadeinText1 1s linear 2.5s;  
-        -ms-animation: fadeinText1 1s linear 2.5s; 
-         -o-animation: fadeinText1 1s linear 2.5s;
-            animation: fadeinText1 1s linear 2.5s;
+  -webkit-animation: fadeinText1 var(--text-fade-in-speed) var(--text-fade-in-cubic) 1.5s; 
+       -moz-animation: fadeinText1 var(--text-fade-in-speed) var(--text-fade-in-cubic) 1.5s;  
+        -ms-animation: fadeinText1 var(--text-fade-in-speed) var(--text-fade-in-cubic) 1.5s; 
+         -o-animation: fadeinText1 var(--text-fade-in-speed) var(--text-fade-in-cubic) 1.5s;
+            animation: fadeinText1 var(--text-fade-in-speed) var(--text-fade-in-cubic) 1.5s;
   animation-fill-mode: backwards;
 }
 .with-bg-size {

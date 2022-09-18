@@ -1,11 +1,11 @@
 <template>
     <div class="Container">
-        <h1>That's me </h1>
-        <div class="img">
+        <h1 ><span>Firstly</span><br>I call this dude <span>Tanel</span></h1>
+        <div id="d2" class="img">
 
         </div>
-
-        <div class="wave-container">
+        
+        <div id="d1" class="wave-container">
             <slot/>
         </div>
     </div>
@@ -21,8 +21,13 @@
         justify-content: center;
         align-content: center;
         column-gap: 6rem;
-        height: 100vh;
-        background-color: var(--main-color)
+        padding: 1rem;
+        padding-top: 10rem;
+        padding-bottom: 15rem;
+        background-color: var(--main-color);
+    }
+    .Container span{
+        color:#ffc401;
     }
     h1{
         color:white;
@@ -35,8 +40,8 @@
         background-image: url("./images/IMG_1164H.jpg");
         background-position: 10% 10%;
         background-size: cover;
-        border-radius: 2rem;
-        
+        border-radius: var(--image-border-radius);
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.322);
 
     }
     .wave-container {
