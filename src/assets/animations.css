@@ -1,6 +1,6 @@
 @keyframes splashFadein {
     0% {
-        opacity: 0;
+        opacity: 1;
     }
     100% {
         opacity: 1;
@@ -12,7 +12,7 @@
 
 @-moz-keyframes splashFadein {
     0% {
-        opacity: 0;
+        opacity: 1;
     }
     100% {
         opacity: 1;
@@ -24,7 +24,7 @@
 
 @-webkit-keyframes splashFadein {
     0% {
-        opacity: 0;
+        opacity: 1;
     }
     100% {
         opacity: 1;
@@ -36,7 +36,7 @@
 
 @-ms-keyframes splashFadein {
     0% {
-        opacity: 0;
+        opacity: 1;
     }
     100% {
         opacity: 1;
