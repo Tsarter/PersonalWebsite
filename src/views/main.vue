@@ -4,13 +4,13 @@ import SplashStart from '../components/splashStart.vue';
 import LandingImage from '../components/LandingCaroussel.vue';
 import PitchureOfMe from '../components/PitchureOfMe.vue';
 import InfoAboutMe from '../components/InfoAboutMe.vue';
+import CardCaroussel from '../components/CardCaroussel.vue';
 
 var hideLaunch = ref(false)
 </script>
 
 
 <template>
-    
     <SplashStart  @hide-launch="hideLaunch = true"></SplashStart>
     <div class="content" v-show="hideLaunch">
         <LandingImage>
@@ -21,6 +21,7 @@ var hideLaunch = ref(false)
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,32L80,64C160,96,320,160,480,176C640,192,800,160,960,165.3C1120,171,1280,213,1360,234.7L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
         </PitchureOfMe>
         <InfoAboutMe/>
+        <CardCaroussel></CardCaroussel>
     </div>
     
         <div id="launchCardsScreen" class="Screen">
