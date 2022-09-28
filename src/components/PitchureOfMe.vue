@@ -1,5 +1,4 @@
 <script setup>
-    import LeaderLine from 'leader-line-new'
 </script>
 <template>
     <div class="Container">
@@ -59,11 +58,12 @@
 </style>
 
 <script>
+    import LeaderLine from 'leader-line-new'
     export default {
       name: "pitchure-of-me",
       mounted() {
-        var func = this.drawLine
-        func()
+       var func = this.drawLine
+       func()
         var width_before = window.innerWidth;
         window.addEventListener('resize', function(){
             console.log(Math.abs(width_before - window.innerWidth))
@@ -76,6 +76,7 @@
       },
       methods:{
         drawLine(){
+            console.log("hey1")
             //To see if dom element is visible
             //https://stackoverflow.com/questions/1462138/event-listener-for-when-element-becomes-visible
             function onVisible(element, callback) {
@@ -88,7 +89,7 @@
                     });
                 }).observe(element);
             }
-            
+            console.log(document)
             onVisible(document.querySelector("#d1"), () => {
                 //Draw line between two dom elements
                 //https://github.com/anseki/leader-line
