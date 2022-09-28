@@ -10,8 +10,9 @@
             <li class="Carouselact" id="2">3</li>
             <li class="Carouselnext" id="3">4</li>
             <li class="Carouselnext Carouselnew-next" id="4">5</li>
+            <div class="Carouselswipe"></div>
         </ul>
-        <div class="Carouselswipe"></div>
+        
     </div>
 </template>
 
@@ -24,7 +25,6 @@
         position: relative;
         justify-content: center;
         align-content: center;
-        /* padding: 1rem; */
         padding-top: 10rem;
         padding-bottom: 15rem;
         height: 50vh;
@@ -96,15 +96,16 @@
     }
     
     .Carouselswipe {
-      width: 270px;
-      height: 200px;
-      position: absolute;
-      background-color: green;
-      border-radius: 2px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      opacity: 0;
+        width: 20rem;
+        height: 30rem;
+        position: absolute;
+        background-color: green;
+        border-radius: 2px;
+        /* top: 60%;
+        left: 51%;
+        transform: translate(-50%,-50%); */
+        opacity: 0;
+        z-index: 1;
     }
 </style>
 <script>
