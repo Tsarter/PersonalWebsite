@@ -3,7 +3,7 @@
 </script>
 <template>
     <div class="Container">
-        <h1><span class="y">Firstly.</span><br>I call <span class="y" id="d1">this</span> dude <span class="y">Tanel</span></h1>
+        <h1><span class="y">Firstly.</span><br>Call <span class="y" id="d1">this</span> dude <span class="y">Tanel</span></h1>
         <div id="d2" class="img">
 
         </div>

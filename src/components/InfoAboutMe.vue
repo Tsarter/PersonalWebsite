@@ -7,9 +7,8 @@
             <p>Languages: <spanG>est</spanG>, <spanG>eng</spanG>, <spanY>ger</spanY></p>
             <p>CPU: <span>~20w</span> brain</p>
         </div>
-        <div class="img-wrapper">
-            <div class="img-bike">
-        </div>
+         <div class="img-bike">
+
         </div>
     </div>
 </template>
@@ -23,7 +22,7 @@
         color:red;
         column-gap: 5rem;
         row-gap: 2rem;
-        padding: 4rem;
+        padding: 1rem;
     }
     .Container h1{
         color: var(--main-color)
@@ -51,16 +50,16 @@
         color: #E5B50B;
         font-weight: bold;
     }
-    .img-wrapper{
-        align-self: flex-end;
-    }
     .img-bike{
-        height: 20rem;
+        align-self: flex-end;
         width: 30rem;
+        height: 25rem;
+        max-height: 40rem;
         border-radius: var(--image-border-radius);
         background-image: url("./images/robert-bike.webp");
         background-position: center;
         background-size: cover;
+        box-shadow: 10px 10px 10px rgb(0 0 0 / 32%);
         
     }
     

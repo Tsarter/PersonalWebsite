@@ -13,6 +13,7 @@
         "leader-line-new": "^1.1.9",
         "leader-line-vue": "^2.1.1",
         "vue": "^3.2.38",
+        "vue-carousel-3d": "^1.0.1",
         "vue-router": "^4.1.5"
     },
     "devDependencies": {

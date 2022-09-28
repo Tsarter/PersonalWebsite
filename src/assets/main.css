@@ -50,3 +50,11 @@ body::after {
     animation: splashFadein .5s linear .5s;
     animation-fill-mode: backwards;
 }
+
+@supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */
+    /* Remove svg on mobile ios */
+    .leader-line {
+        display: none;
+    }
+}
