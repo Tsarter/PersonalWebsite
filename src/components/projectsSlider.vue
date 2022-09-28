@@ -3,6 +3,7 @@
 
 <template>
     <div class="CarouselContainer">
+        <h2>Websites</h2>
         <ul class="Carousellist">
             <li class="Carouselhide" id="0">1</li>
             <li class="Carouselprev" id="1">2</li>
@@ -19,15 +20,15 @@
 
     .CarouselContainer{
         display: flex;
+        flex-direction: column;
         position: relative;
-        flex-wrap: wrap;
         justify-content: center;
         align-content: center;
-        column-gap: 6rem;
-        padding: 1rem;
+        /* padding: 1rem; */
         padding-top: 10rem;
         padding-bottom: 15rem;
-        height:50vh;
+        height: 50vh;
+        row-gap: 4rem;
         width: 100%;
         background-color: var(--main-color);
     }
@@ -36,23 +37,29 @@
         margin: 0;
     }
     .Carousellist {
-      height: 200px;
+        height: 100%;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+/*       height: 200px;
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%)
+      transform: translate(-50%,-50%) */
     }
     
     .Carousellist li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       list-style-type: none;
-      
-      width:30vw;
-      height: 40vh;
+      width:20rem;
+      height: 30rem;
       opacity: .25;
       position: absolute;
-      left: 50%;
-      margin-left: -100px;
-      border-radius: 2px;
+      /* left: 50%; */
+      /* margin-left: -100px; */
+      border-radius: 2rem;
       background: #9C89B8;
       transition: transform 1s, opacity 1s;
     }
