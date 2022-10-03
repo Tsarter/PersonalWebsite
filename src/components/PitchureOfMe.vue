@@ -1,4 +1,5 @@
 <script setup>
+    import LeaderLine from 'leader-line-new'
 </script>
 <template>
     <div class="Container">
@@ -30,6 +31,7 @@
     }
     .Container span.y{
         color:#ffc401;
+        flex: 1;
     }
     h1{
         color:white;

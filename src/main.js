@@ -7,4 +7,5 @@ const app = createApp(App);
 
 app.use(Carousel3d)
 app.use(router);
+
 app.mount("#app");

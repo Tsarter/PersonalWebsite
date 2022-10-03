@@ -8,7 +8,7 @@
     <div class="cutoutImg"></div>
     <div class="with-bg-size wrap">
       <div class="heading">
-        <div class="line-1">Exploring... </div>
+        <div class="line-1"><h1>Exploring...</h1> </div>
         <div class="line-2">The Unknown</div>
       </div>
     </div>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: "splash-image",
+ name: "splash-image",
   data(){
     return{
       SVGVisible: false
@@ -60,11 +60,12 @@ export default {
   overflow: hidden;
   width: 100%;
   height: 120vh;
-  -webkit-animation: splashFadein 2.5s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: splashFadein 2.5s; /* Firefox < 16 */
-        -ms-animation: splashFadein 2.5s; /* Internet Explorer */
-         -o-animation: splashFadein 2.5s; /* Opera < 12.1 */
-            animation: splashFadein 2.5s;
+  /* STUPID!  looks weird
+  -webkit-animation: splashFadein 2.5s; 
+       -moz-animation: splashFadein 2.5s; 
+        -ms-animation: splashFadein 2.5s; 
+         -o-animation: splashFadein 2.5s;
+            animation: splashFadein 2.5s; */
       
   
 }
@@ -82,10 +83,11 @@ export default {
 .heading{
   display: flex;
   flex-direction: column;
-  font-size: 60px;
   font-weight: 700;
   row-gap: 1rem;
- 
+}
+.heading h1{
+  font-size: min(4rem,15vw);
 }
 .line-1{
   color:#cb9d0c;
@@ -129,8 +131,10 @@ export default {
     padding-top: 24rem ;
   }
   .heading{
-    font-size: 130px;
     padding-bottom: 40rem;
+  }
+  .heading h1{
+    font-size: 130px;
   }
   .line-2{
     font-size: 32px;

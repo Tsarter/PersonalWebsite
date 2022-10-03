@@ -1,4 +1,5 @@
 <script setup>
+  import { ref } from 'vue'
 defineEmits(["hide-launch"]);
 </script>
 <template>
@@ -37,6 +38,10 @@ defineEmits(["hide-launch"]);
 <script>
 export default {
   name: "splash-start",
+  setup(){
+    const canvasShow = true;
+    return{canvasShow}
+  },
   data() {
     return {
       S1Visible: true,
@@ -53,7 +58,7 @@ export default {
     print() {
       console.log(this.vueCanvas);
     },
-    explode(event) {
+    async explode(event) {
       var ctx = this.vueCanvas;
       // Set Canvas to be window size
       canvas.width = window.innerWidth;
@@ -226,10 +231,9 @@ export default {
 
       // First particle explosion
       //initParticles(config.particleNumber);
-     
-
       //Fade Out https://stackoverflow.com/questions/59528490/how-to-add-a-fade-out-effect-in-an-html-canvas
-      setTimeout(function () {
+      function timeout () {
+        return new Promise(() => setTimeout(function () {
         var fadeTarget = document.getElementById("canvas");
         var fadeEffect = setInterval(function () {
           if (!fadeTarget.style.opacity) {
@@ -241,7 +245,10 @@ export default {
             clearInterval(fadeEffect)
           }
         }, 20);
-      }, 1500)
+      }, 1500));
+      }
+      await timeout();
+
     },
   },
 };
@@ -249,6 +256,9 @@ export default {
 
 <style scoped>
 
+#canvas{
+  z-index: 10;
+}
 .text {
   opacity: 0;
   position: absolute;
